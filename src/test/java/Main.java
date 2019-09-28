@@ -9,6 +9,6 @@ public class Main {
             allNumbers.add(ThreadLocalRandom.current().nextInt(0, 100));
         }
         A a = new A();
-        System.out.println(a.sort(allNumbers, 1));
+        System.out.println(a.scan(allNumbers, 1));
     }
 }

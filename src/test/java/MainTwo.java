@@ -108,44 +108,14 @@ public class MainTwo {
         for (int i = 0; i < 100; i++) {
             allNumbers.add(ThreadLocalRandom.current().nextInt(0, 100));
         }
-        List<Integer> sortNumbers = new ArrayList<>();
-        int minNumber;
-        int maxNumber = 0;
-        int countInSort = 0;
-        int countInAll = 0;
-        ScanOnCopy scanOnCopy = new ScanOnCopy();
-        for (int i = 0; i < allNumbers.size(); i++) {
-            if (allNumbers.get(i) > maxNumber){
-                maxNumber = allNumbers.get(i);
-            }
-        }
-        for (int i = 0; i < allNumbers.size(); i++) {
-            minNumber = maxNumber;
-            System.out.println(i);
-            for (int j = 0; j < allNumbers.size(); j++) {
-                if (sortNumbers.size() > 0 && sortNumbers.get(sortNumbers.size() - 1) < allNumbers.get(j) && minNumber > allNumbers.get(j)){
-                    System.out.println("зашло!");
-                    minNumber = allNumbers.get(j);
-                } else if (sortNumbers.size() == 0 && minNumber > allNumbers.get(j)){
-                    minNumber = allNumbers.get(j);
-                }
-            }
-            countInAll = scanOnCopy.scan(allNumbers, minNumber);
-            countInSort = scanOnCopy.scan(sortNumbers, minNumber);
-            if (countInSort == 0){
-                for (int j = 0; j < countInAll - countInSort; j++) {
-                    sortNumbers.add(minNumber);
-                }
-            }
-        }
+        List<Integer> sortNumbers = new SortList().sort(allNumbers);
 //        allNumbers.sort(Comparator.naturalOrder());
         System.out.println(allNumbers);
         System.out.println(allNumbers.size());
         System.out.println(sortNumbers);
         System.out.println(sortNumbers.size());
         A a = new A();
-        System.out.println("1 / 2 = " + 1/ 2);
-        System.out.println(a.sort(allNumbers, 1));
-        System.out.println(a.sortBisection(allNumbers, 1));
+        System.out.println(a.scan(allNumbers, 36));
+        System.out.println(a.scanBisection(allNumbers, 36));
     }
 }

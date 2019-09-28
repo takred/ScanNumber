@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class A {
-    public boolean sort(List<Integer> allNumbers, int number){
+    public boolean scan(List<Integer> allNumbers, int number){
         for (int i = 0; i < allNumbers.size(); i++) {
             if (allNumbers.get(i) == number){
                 return true;
@@ -9,7 +9,7 @@ public class A {
         }
         return false;
     }
-    public boolean sortBisection(List<Integer> allNumbers, int number){
+    public boolean scanBisection(List<Integer> allNumbers, int number){
         int border = allNumbers.size() / 2;
         for (int i = 0; i < allNumbers.size(); i++) {
             if (number < allNumbers.get(border)){
